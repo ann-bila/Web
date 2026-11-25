@@ -47,7 +47,7 @@ h2 {
 .star {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding-bottom: 100px;
 }
 
@@ -58,6 +58,7 @@ h2 {
     transform: scaleY(1.5);
     font-size: 217px;
     text-align: center;
+    white-space: nowrap;
 }
 
 .star-text, .star-img{
@@ -179,13 +180,49 @@ h2 {
 }
 
 @media (max-width: 595px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
+    /* Шапка-герой масштабується пропорційно ширині екрана
+       (усі px із десктопу переведено у vw: 595px = 100vw) */
+    .star {
+        overflow: hidden;
+        padding-bottom: 16.8vw;
+    }
+
+    .star-text {
+        font-size: 36.5vw;
+        padding-top: 6.7vw;
+    }
+
+    .star-img {
+        top: 16.8vw;
+    }
+
     .subtitle {
         font-size: 6vw;
-        line-height: 8vw;
+        line-height: 7.9vw;
+    }
+
+    .header a {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .about {
+        padding: 30px 21px 40px 21px;
     }
 
     .about-box {
         flex-direction: column-reverse;
+    }
+
+    .about-photo {
+        width: 150px;
     }
 
     .row img {
