@@ -181,7 +181,7 @@ h2 {
 
 @media (max-width: 595px) {
     html, body {
-        overflow-x: hidden;
+        overflow-x: clip;
     }
 
     /* Шапка-герой масштабується пропорційно ширині екрана
